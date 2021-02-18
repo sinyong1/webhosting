@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<style>
+
+
+.container{
+display: grid;
+grid-template: 400px 400px 400px 400px/400px 400px 400px 400px  ;
+gap:5px
+}
+[class*=cell]
+{
+    box-sizing:border-box;
+border: 5px solid black;
+border-radius: 10px;
+padding: 20px;
+
+
+}
+
+.cell-a{
+    grid-row-start:1;
+    grid-row-end:4;
+    grid-column:1/3;
+}
+</style>
+
+</head>
+<body>
+  <div class="container">
+      <div class="cell-a">cell-a
+          <p>hi</p>
+      </div>
+      <div class="cell-b">cell-b</div>
+      <div class="cell-c">cell-c</div>
+      <div class="cell-d">cell-d</div>
+      <div class="cell-d">cell-d</div><div class="cell-d">cell-d</div><div class="cell-d">cell-d</div>
+  </div>
+    
+
+
+</body>
+</html>
