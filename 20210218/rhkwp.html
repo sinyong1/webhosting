@@ -4,7 +4,51 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Document</title><style type="text/css">
+
+        .banner {position: relative; width: 600px; height: 700px; top: 0px;  ; padding:0; overflow: hidden; }
+        .banner ul {position: relative; margin: 0px; padding:0; list-style: none; }
+        .banner ul li {float:right; width: 600px; height: 700px; margin:0; padding:0;}
+    
+    </style>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
+    <script language="JavaScript">
+    
+        $(document).ready(function() {
+        
+            var $banner = $(".banner").find("ul");
+    
+            var $bannerWidth = $banner.children().outerWidth();
+            var $bannerHeight = $banner.children().outerHeight(700); 
+            var $bannerLength = $banner.children().length;
+            var rollingId;
+    
+            rollingId = setInterval(function() { rollingStart(); }, 3000);
+    
+            banner.mouseover(function(){
+                clearInterval(rollingId);
+                $(this).css("cursor", "pointer");
+            });
+            banner.mouseout(function(){
+                rollingId = setInterval(function() { rollingStart(); }, 3000);
+                $(this).css("cursor", "default");
+            });
+            
+            function rollingStart() {
+                $banner.css("width", $bannerWidth * $bannerLength + "px");
+                $banner.css("height", $bannerHeight + "px");
+                $banner.animate({left: - $bannerWidth + "px"}, 4000, function() { 				$(this).append("<li>" + $(this).find("li:first").html() + "</li>");
+            
+                    $(this).find("li:first").remove();
+                    $(this).css("left", 0);
+                });
+            }
+        }); 
+    
+    </script>
+    
 <style>
 
 
@@ -54,7 +98,16 @@ width: 950px;
         color: white;
     }
  
- 
+ #section2{
+top:200px;
+    float: right;
+    position: absolute;
+right: 100px;
+left: 1000px;
+border: 2px solid black;
+height: 700px;
+
+ }
 
 
 
@@ -89,17 +142,39 @@ What is CRM?
 기업이 고객과의 지속적인 관계를 위해
     보유한 자원을 최대한 활용하여
     고객의 평생가치를 증진시키려는 과정</div>
+    <div id="section2">
+
+
+        <div class="banner">
+            <ul>
+                <li><img src="ban1.PNG" width="600" height="700px"></li>
+                <li><img src="ban2.PNG" width="600" height="700px"></li>
+                <li><img src="ban3.PNG" width="600" height="700px"></li>
+                <li><img src="ban4.PNG" width="600" height="700px"></li>
+                <li><img src="ban5.PNG" width="600" height="700px"></li>
+                <li><img src="ban6.PNG" width="600" height="700px"></li>
+                <li><img src="ban7.PNG" width="600" height="700px"></li>
+            </ul>
+        </div>
+        
+        
+    </div>
+
+
 </div>
+
+
 
 <p>
 
   
    
-<a href="start.html" class="btn_gallery_next"><h1> <  이전  <a href="make.html" class="btn_gallery_next"> 다음 > </a> </a>
+<a href="start2.html" class="btn_gallery_next"><h1> <  이전  <a href="make.html" class="btn_gallery_next"> 다음 > </a> </a>
  
 
  
 </p>
+
 </div>
 
 

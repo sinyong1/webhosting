@@ -18,7 +18,7 @@ overflow: hidden;
 }
 
 .rolling_wrap a {
-position: absolute;
+position:relative;
 width: 180px;
 height: 100%;
 margin-left: 5px;
