@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" Content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+
+
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+  
+    <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+
+<style type="text/css">
+
+	.banner {position: relative; width: 340px; height: 210px; top: -60px; float: right; padding:0; overflow: hidden; }
+	.banner ul {position: relative; margin: 0px; padding:0; list-style: none; }
+	.banner ul li {float:right; width: 340px; height: 210px; margin:0; padding:0;}
+
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script language="JavaScript">
+
+	$(document).ready(function() {
+	
+		var $banner = $(".banner").find("ul");
+
+		var $bannerWidth = $banner.children().outerWidth();
+		var $bannerHeight = $banner.children().outerHeight(700); 
+		var $bannerLength = $banner.children().length;
+		var rollingId;
+
+		rollingId = setInterval(function() { rollingStart(); }, 1000);
+
+		banner.mouseover(function(){
+			clearInterval(rollingId);
+			$(this).css("cursor", "pointer");
+		});
+		banner.mouseout(function(){
+			rollingId = setInterval(function() { rollingStart(); }, 3000);
+			$(this).css("cursor", "default");
+		});
+		
+		function rollingStart() {
+			$banner.css("width", $bannerWidth * $bannerLength + "px");
+			$banner.css("height", $bannerHeight + "px");
+			$banner.animate({left: - $bannerWidth + "px"}, 1500, function() { 				$(this).append("<li>" + $(this).find("li:first").html() + "</li>");
+		
+				$(this).find("li:first").remove();
+				$(this).css("left", 0);
+			});
+		}
+	}); 
+
+</script>
+
+
+<style>
+
+.wrap{
+    width: 100px;
+    height: 100px;
+    ;
+}
+.box1{
+    width: 100px;
+    height: 100px;
+ position: fixed;
+transition-duration: 2s;
+z-index: 100;
+}
+
+
+
+.box2{
+    width: 50px;
+    height: 50px;
+    position: fixed;
+transition-duration: 2s;
+z-index: 10;
+}
+
+
+
+.infinite_rotating_logo:hover{
+    animation: cycle 15s linear ;
+    transform-origin: 50% 50%;    
+}
+ 
+@keyframes cycle{
+	100% {
+    	transform: rotate(1800deg);
+    }
+}
+
+.box3{
+width: 100px;
+height: 100px;
+background-image: url(machine.jpg);
+transition-property: width,background-color,border-radius;
+transition-duration: 5s,3s,3s;
+transition-delay: 0s,2s,2s;
+
+
+}
+.wrap:hover > .box3{
+width: 1800px;
+background-image: url(head.jpg);
+background-size: cover;
+opacity: 1.0;
+border-radius: 100px;
+}
+
+.wrap2{
+bottom: 0;
+
+
+}
+
+.infinite_rotating_logo2{
+    animation: cycle2 15s linear ;
+    transform-origin: 50% 50%;    
+}
+ 
+@keyframes cycle2{
+	100% {
+    	transform: rotate(3600deg);
+    }
+}
+.wrap2> .auto{
+width: 1800px;
+background-image: url(machine.jpg);
+background-size: cover;
+opacity: 1.0;
+
+}
+.box3
+{
+    transition-timing-function: linear;
+overflow: hidden;
+
+font-size: 20px;
+
+
+}
+
+  
+
+span {font-family: 'Akaya Kanadaka', cursive;
+       
+        display: block;
+      }
+      
+      span:not(.on) {
+
+        animation: flashText 1s ease-out alternate infinite;
+      }
+      
+      span.on {
+        position: relative;
+        display: inline-block;
+    
+      }
+      
+      @keyframes flash{
+        to {
+       opacity: 1;
+         font-size: 70%;
+        }
+      }
+      
+      @keyframes flashText {
+        to {
+          opacity: 0.2;
+         font-size: 140%;
+        }
+      }
+
+
+.blinking{ 
+  font-family: 'Akaya Kanadaka', cursive;
+  -webkit-animation:blink 1.5s ease-in-out infinite alternate; -moz-animation:blink 1.5s ease-in-out infinite alternate; animation:blink 1s ease-in-out infinite alternate; }
+ @-webkit-keyframes blink{ 0% {opacity:0;} 100% {opacity:1;} } 
+ @-moz-keyframes blink{ 0% {opacity:0;} 100% {opacity:1;} } 
+ @keyframes blink{ 0% {opacity:0;} 100% {opacity:1;} }
+
+
+ .body{
+
+position: absolute;
+top: 200px;  
+}
+
+
+
+
+.header{
+
+
+    width: 80%;
+height: 200px;
+float: left;
+background-image: url(machine.jpg);
+overflow: hidden;
+border-radius: 30px;
+padding: 30px;
+
+
+}
+
+.card{
+width: 400px;
+height: 500px;
+border-style:outset;
+border-color: black;
+background-color: white;
+overflow: hidden;
+    transition-duration: 2s;
+
+}
+
+
+h1{
+  
+  font-size: 50px;
+  font-family: "preconnect";
+color:black;
+text-align: center;
+width: 700px; position: relative; 
+
+left: 50%; margin-left: -200px;
+
+overflow: hidden;
+
+
+}
+
+.footer {
+   position:absolute;
+ 
+top: 300px;
+right: 0;
+float: right;
+width:400px;
+ 
+
+border-radius: 10px;
+
+}
+body{
+
+background-image: url(machine.jpg);
+  background-size: cover;
+  
+
+}
+.sec1{
+position: absolute;
+height: 500px;
+width: 400px;
+border-style:outset;
+overflow: hidden;
+border: 3px solid black;
+float: left;
+}
+
+.sec2{
+    position: absolute;
+    left: 500px;
+    right: 100px;
+height: 500px;
+width: 400px;
+border-style:outset;
+overflow: hidden;
+border: 1px solid black;
+float: right
+
+}
+
+
+.sec1:hover > .card{
+
+
+    transform:  scale(1.5) translate(0px) ;
+    transform-origin: 100% 100% ;
+animation-duration: infinite;
+}
+
+.sec2:hover > .card{
+
+
+transform:  scale(1.5) translate(0px) ;
+transform-origin: 100% 100% ;
+animation-duration: infinite;
+}
+
+.sec3:hover > .card{
+
+
+transform:  scale(1.5) translate(0px) ;
+transform-origin: 100% 100% ;
+animation-duration: infinite;
+}
+
+.sec4:hover > .card{
+
+
+transform:  scale(1.5) translate(0px) ;
+transform-origin: 100% 100% ;
+animation-duration: infinite;
+}
+
+
+.sec3{
+    position: absolute;
+    left: 1000px;
+    
+height: 500px;
+width: 400px;
+border-style:outset;
+overflow: hidden;
+border: 1px solid black;
+float: right
+
+}
+.sec4{
+    background-color: white;
+position: absolute;
+top: 500px;
+left: 1500px;
+width: 400px;
+height: 400px;
+border: 2px solid black;
+float: left;
+overflow: scroll;
+
+}
+
+
+
+</style>
+
+
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="blinking"> 공사중인 목록</div>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+         
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="#">공사중1</a>
+                  <a class="dropdown-item" href="#">공사중2</a>
+                  <a class="dropdown-item" href="#"> 공사중3</a>
+          
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#"></a>
+                </div>
+              </li>
+            
+            </ul>
+  
+            <form class="form-inline my-2 my-lg-0">
+              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">검색</button>
+            </form>
+          </div>
+        </nav>
+  
+    
+<div class="header">
+  
+    
+
+  <div class="wrap">
+
+    <div class="box1">
+    
+        <i class="fas fa-cog fa-6x infinite_rotating_logo " ></i>
+     
+    
+    </div>
+    
+    
+    
+    <div class="box3">
+<h1><span> This is header box</span></h1>
+     
+    </div> 
+    </div>
+
+
+</div>    
+
+
+
+
+<div class="body">
+
+  
+    
+<div class="sec1">
+
+    <div class="card">
+        
+     
+        
+      <div class = "blinking" >HTML sample </div>
+    
+       <a href="chap05.html">
+        <img src="html.png" width="400px" height="400px" alt="Avatar" >
+       </a> 
+        </div>
+    </div>
+
+<div class="sec2">
+    
+    <div class="card">
+        
+     
+        <div class = "blinking" >CRM samlpe </div>
+  
+     <a href="rhkwp.html">
+      <img src="CRM1.png" width="400px" height="400px" alt="Avatar" >
+     </a> 
+    </div>
+
+</div>
+
+
+<div class="sec3"> 
+
+    <div class="card">
+        
+      <div class = "blinking" >시계열 sample </div>
+  
+     <a href="make2.html">
+      <img src="time.png" width="400px" height="400px" alt="Avatar" >
+     </a> 
+      </div>
+  </div>
+
+</div>
+
+</div>
+
+
+
+<div class="footer">
+
+<div class="banner">
+    <ul>
+        <li><a href="rhkwp.html"><img src="CRM.PNG" width="340" height="200px"></a></li>
+        <li><a href="#"><img src="cpa.PNG" width="340" height="200px"></a></li>
+        <li><a href="chap05.html"><img src="html.PNG" width="340" height="200px"></a></li>
+        <li><a href="make2.html"><img src="time.PNG" width="340" height="200px"></a></li>
+    
+    </ul>
+
+    
+</div>
+
+
+</div>
+
+
+<div class="sec4">
+  <div class="card">
+    <span>
+        <h2>
+    재혁 형제님의 페이지 링크
+</h2>    
+</span>
+    <a href="https://wogur03157.github.io/webhosting_20210203/index/index.html">
+    <img src="duv.PNG"   width="400" height="400"         alt="">
+   
+</a>
+    </div>
+    
+  </div>
+
+
+
+
+</body>
+</html>
