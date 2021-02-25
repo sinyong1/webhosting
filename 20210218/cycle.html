@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+<style>
+
+.wrap{
+    width: 100px;
+    height: 100px;
+    ;
+}
+.box1{
+    width: 100px;
+    height: 100px;
+ position: fixed;
+transition-duration: 2s;
+z-index: 100;
+}
+
+
+
+.box2{
+    width: 50px;
+    height: 50px;
+    position: fixed;
+transition-duration: 2s;
+z-index: 10;
+}
+
+
+
+.infinite_rotating_logo:hover{
+    animation: cycle 15s linear ;
+    transform-origin: 50% 50%;    
+}
+ 
+@keyframes cycle{
+	100% {
+    	transform: rotate(3600deg);
+    }
+}
+
+.box3{
+width: 100px;
+height: 100px;
+background-color: white;
+transition-property: width,background-color,border-radius;
+transition-duration: 5s,3s,3s;
+transition-delay: 0s,2s,2s;
+
+
+}
+.wrap:hover > .box3{
+width: 2000px;
+background-image: url(machine.jpg);
+
+opacity: 0.2;
+border-radius: 30px;
+}
+.box3
+{
+    transition-timing-function: linear;
+overflow: hidden;
+}
+a1{
+    font-size: 50px;
+color: white;
+left: 900px;
+right: 200px;
+position: absolute;
+}
+</style>
+
+
+</head>
+<body>
+
+
+
+<div class="wrap">
+
+<div class="box1">
+
+    <i class="fas fa-cog fa-6x infinite_rotating_logo " ></i>
+ 
+
+</div>
+
+
+
+<div class="box3">
+    <a1>인공지능 플랫폼</a1>
+</div>
+
+
+ 
+</div>
+
+
+
+
+</body>
+
+
+</html>
